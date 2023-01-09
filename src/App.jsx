@@ -20,8 +20,8 @@ function App() {
 
   async function getTokenBalance() {
     const config = {
-      apiKey: '<-- COPY-PASTE YOUR ALCHEMY API KEY HERE -->',
-      network: Network.ETH_MAINNET,
+      apiKey: 'https://eth-goerli.g.alchemy.com/v2/Z_W2-lufRL-2LeMbTOyPemO4ZHnWBHmp',
+      network: Network.ETH_GOERLI,
     };
 
     const alchemy = new Alchemy(config);
@@ -75,9 +75,11 @@ function App() {
           p={4}
           bgColor="white"
           fontSize={24}
+          
         />
         <Button fontSize={20} onClick={getTokenBalance} mt={36} bgColor="blue">
           Check ERC-20 Token Balances
+          
         </Button>
 
         <Heading my={36}>ERC-20 token balances:</Heading>
@@ -111,6 +113,7 @@ function App() {
         ) : (
           'Please make a query! This may take a few seconds...'
         )}
+        <div class="lds-hourglass"></div>
       </Flex>
     </Box>
   );
